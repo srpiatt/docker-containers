@@ -1,0 +1,11 @@
+services:
+  rstudio:
+    image: rocker/rstudio:latest
+    ports:
+      - "8787:8787"
+    environment:
+      DISABLE_AUTH: true
+      ROOT: true
+    volumes:
+      - ./config:/home/rstudio/.config/rstudio # preferences
+      - ./workspace:/home/rstudio/workspace

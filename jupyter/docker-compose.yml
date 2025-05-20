@@ -1,0 +1,12 @@
+services:
+  jupyter-server:
+    image: jupyter/base-notebook:latest
+    ports:
+      - "8888:8888"
+    user: jovyan
+    environment:
+      GRANT_SUDO: "yes"
+    volumes:
+      - ./workspace:/home/jovyan/workspace
+      # Comment out the next line to return default jupyter authentication
+      - ./jupyter_notebook_config.py:/home/jovyan/.jupyter/jupyter_notebook_config.py
